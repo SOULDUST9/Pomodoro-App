@@ -102,3 +102,13 @@ button {
 button:hover {
     color: #90c0d1;
 }
+
+.time-chooser {
+    margin: 10px auto;
+    width: 250px;
+}
+
+#time-select-text {
+    font-size: 90%;
+    color: #d8e9ef;
+}
