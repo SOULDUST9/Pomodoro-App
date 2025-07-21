@@ -35,7 +35,7 @@ choosenMinutes.addEventListener("input", function () {
 
 
 startTimer.addEventListener("click", function(){
-
+  if (timerFlag){
     let myInterval = setInterval(updateSeconds, 1000);
 
     timerFlag = false;
@@ -43,12 +43,17 @@ startTimer.addEventListener("click", function(){
 
     timerFlag = false;
     updateSeconds();
-    timerFlag = true; 
+  }
+  
+  
+
+    
 });
 
 function updateSeconds(){
         
     if (totalTime == -1){
+        timerFlag = true; 
         clearInterval(myInterval);
     }
     let currentMin = Math.floor(totalTime/60);
