@@ -112,3 +112,8 @@ button:hover {
     font-size: 90%;
     color: #d8e9ef;
 }
+
+.app-counter-box > p {
+    display: inline-block;
+    margin-top: 10px;
+}
