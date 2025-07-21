@@ -165,8 +165,34 @@ button:hover {
 a:hover {
     color: #90c0d1;
 }
-#display-history-wrapper{
+
+#display-history-wrapper, #clear-history-wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px;
+}
+#history-head {
+    text-align: center;
+    font-size: 85%;
+}
+#prev-tasks-display {
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+    border: white solid 2px;
+    border-radius: 25px;
+}
+
+#display-history, #clear-history { 
+    border: white solid 2px;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+#history-wrapper {
+    margin: 100px auto 100px auto;
 }

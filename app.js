@@ -95,34 +95,15 @@ function updateSeconds(){
 }
 
 
-// function addTask(){
-//   const task = choosenTask.value;
-//   const time = choosenMinutes.value;
+function addTask(){
+  const task = choosenTask.value;
+  const time = choosenMinutes.value;
 
-//   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-//   tasks.push({ task, time });
-//   localStorage.setItem("tasks", JSON.stringify(tasks));
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.push({ task, time });
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 
-//   alert("Task added!");
+  alert("Task added!");
 
-// }
+}
 
-
-
-// function displayTasks(){
-//   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-//       taskListContainer.innerHTML = "";
-
-//       if (tasks.length === 0) {
-//         taskListContainer.textContent = "No past tasks found.";
-//         return;
-//       }
-
-//       tasks.forEach(({ task, time }) => {
-//         const div = document.createElement("div");
-//         div.textContent = `${task} — ${time}`;
-//         taskListContainer.appendChild(div);
-//       });
-// }
-
-// showHistory.addEventListener("click", displayTasks);
