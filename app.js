@@ -1,22 +1,81 @@
-// const choosenTimeSubmit = document.getElementById("time-submit");
-// const choosenMinutes = document.getElementById("inputedTime");
-// const startTimer = document.getElementById("timer-start");
+const choosenMinutes = document.getElementById("inputedTime");
+const startTimer = document.getElementById("timer-start");
 
-// const minutes = document.getElementsByClassName("minutes");
-// const seconds = document.getElementsByClassName("seconds");
+const minutes = document.querySelector(".minutes");
+const seconds = document.querySelector(".seconds");
 
-// let totalSeconds;
-// let myInterval = setInterval(updateSeconds, 1000);
+let totalTime;
+let timerFlag = true;
+
+choosenMinutes.addEventListener("input", function () {
+  if (timerFlag){
+    const value = Number(choosenMinutes.value);
+
+    if (value < 1 || value > 60) {
+      alert("Please enter a valid number of minutes between 1 and 60.");
+      return;
+    }
+  
+    let strValue = "";
+  
+    if (value < 10) {
+      strValue = "0" + value;
+    } else {
+      strValue = value.toString();
+    }
+  
+  
+    minutes.textContent = strValue;
+    seconds.textContent = "00";
+  }else {
+    alert("Timer has already started wait for it to finish.");
+    return;
+  }
+});
 
 
-// choosenTimeSubmit.addEventListener("click", function() {
-//     if (choosenMinutes.textContent < 1 || choosenMinutes.textContent > 60) {
-//         alert("Please enter a valid number of minutes between 1 and 60.");
-//     }
-//     minutes.textContent = choosenMinutes.textContent;
-// });
+startTimer.addEventListener("click", function(){
 
+    let myInterval = setInterval(updateSeconds, 1000);
 
+    timerFlag = false;
+    totalTime = 60 * Number(minutes.textContent);
+
+    timerFlag = false;
+    updateSeconds();
+    timerFlag = true; 
+});
+
+function updateSeconds(){
+        
+    if (totalTime == -1){
+        clearInterval(myInterval);
+    }
+    let currentMin = Math.floor(totalTime/60);
+    let currentSec = totalTime % 60;
+
+    let strMinValue = "";
+
+    if (currentMin < 10) {
+        strMinValue = "0" + currentMin;
+    } else {
+        strMinValue = currentMin.toString();
+    }
+
+    let strSecValue = "";
+
+    if (currentSec < 10) {
+        strSecValue = "0" + currentSec;
+    } else {
+        strSecValue = currentSec.toString();
+    }
+
+    minutes.textContent = strMinValue;
+    seconds.textContent = strSecValue;
+
+    totalTime--;
+    
+}
 
 
 
