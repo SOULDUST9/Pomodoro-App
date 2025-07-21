@@ -27,7 +27,7 @@ p {
 .app-container {
     width: 250px;
     height: 420px;
-    margin: 20% auto;
+    margin: 15% auto;
     text-align: center;
     border-radius: 5px;
     padding: 20px;
@@ -124,4 +124,37 @@ button:hover {
 
 #inputedTime {
     margin-top: 10px;
+}
+
+.site-header {
+    background-color: #1f2937; /* dark gray/navy */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+  
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0px 50px 0 0;
+}
+  
+.nav > a {
+    color: #d1d5db;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #90c0d1;
 }
