@@ -1,8 +1,11 @@
 const choosenMinutes = document.getElementById("inputedTime");
 const startTimer = document.getElementById("timer-start");
+const choosenTask = document.getElementById("inputedTask");
+const showHistory = document.getElementById("display-history");
 
 const minutes = document.querySelector(".minutes");
 const seconds = document.querySelector(".seconds");
+const currentTask = document.querySelector(".currentTask");
 
 let totalTime;
 let timerFlag = true;
@@ -35,14 +38,23 @@ choosenMinutes.addEventListener("input", function () {
 
 
 startTimer.addEventListener("click", function(){
-  if (timerFlag){
+  const task = choosenTask.value;
+  if (task == ''){
+    alert("Please fill in both fields!");
+    return;
+  }else if (timerFlag){
     let myInterval = setInterval(updateSeconds, 1000);
 
+    currentTask.textContent = task;
     timerFlag = false;
     totalTime = 60 * Number(minutes.textContent);
 
     timerFlag = false;
+    addTask();
     updateSeconds();
+  }else {
+    alert("Please wait for timer to finish before adding a new task!");
+    return;
   }
   
   
@@ -83,4 +95,34 @@ function updateSeconds(){
 }
 
 
+// function addTask(){
+//   const task = choosenTask.value;
+//   const time = choosenMinutes.value;
 
+//   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+//   tasks.push({ task, time });
+//   localStorage.setItem("tasks", JSON.stringify(tasks));
+
+//   alert("Task added!");
+
+// }
+
+
+
+// function displayTasks(){
+//   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+//       taskListContainer.innerHTML = "";
+
+//       if (tasks.length === 0) {
+//         taskListContainer.textContent = "No past tasks found.";
+//         return;
+//       }
+
+//       tasks.forEach(({ task, time }) => {
+//         const div = document.createElement("div");
+//         div.textContent = `${task} — ${time}`;
+//         taskListContainer.appendChild(div);
+//       });
+// }
+
+// showHistory.addEventListener("click", displayTasks);

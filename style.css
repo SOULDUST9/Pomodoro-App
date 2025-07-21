@@ -21,12 +21,12 @@ p {
     height: 20px;
     margin: 10px auto 20px auto;
     padding: 0 0 20px 0;
-    width: 150px
+    width: 85%;
 }
   
 .app-container {
-    width: 250px;
-    height: 420px;
+    width: 40%;
+    height: 500px;
     margin: 15% auto;
     text-align: center;
     border-radius: 5px;
@@ -87,13 +87,13 @@ p {
     font-family: 'Droid Sans Mono', monospace;
     font-size: 250%;
     position: relative;
-    top: 50px;
+    top: 40px;
     color: #d8e9ef;
 }
   
 button {
     position: relative;
-    top: 50px;
+    top: 48px;
     font-size: 80%;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -112,14 +112,21 @@ button:hover {
     width: 250px;
 }
 
-#time-select-text {
+.time-select-text, .task-select-text {
     font-size: 90%;
     color: #d8e9ef;
+    width: 70%;
 }
 
-.app-counter-box > p {
+.app-counter-box > #timer {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 0px;
+}
+.app-counter-box > #task {
+    font-size: 30%;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    max-width: 200px;
 }
 
 #inputedTime {
@@ -157,4 +164,9 @@ button:hover {
 
 a:hover {
     color: #90c0d1;
+}
+#display-history-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

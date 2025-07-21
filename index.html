@@ -28,13 +28,17 @@
             <div class="semi-circle left-side circle"></div>
           </div>
           <div class="app-counter-box">
-            <p><span class="minutes">25</span>:<span class="seconds">00</span></p>
+            <p id="task">task: <span class="currentTask">NONE</span></p>
+            <p id="timer"><span class="minutes">25</span>:<span class="seconds">00</span></p>
           </div>
           <button class="btn-start" id="timer-start">start</button>
         </div>
         <div class="time-chooser">
             <label id="time-select-text">Select the amount of time you would like:<br> <input type="number" min="1" placeholder="Select a Time" id="inputedTime"></label>
         </div>
+        <div class="task-chooser">
+          <label id="task-select-text">Type the task you would like do:<br> <input type="text" placeholder="Type a Task" id="inputedTask"></label>
+      </div>
     </div>
   </body>
   <script src="app.js"></script>
